@@ -1,6 +1,11 @@
 import "./App.css";
 
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 
 import { AuthProvider } from "./context/AuthContext.jsx";
 import { onAuthStateChanged } from "firebase/auth";
@@ -13,6 +18,8 @@ import Register from "./pages/register/Register.jsx";
 import About from "./pages/about/About.jsx";
 import CreatePost from "./pages/createPost/CreatePost.jsx";
 import Dashboard from "./pages/dashboard/Dashboard.jsx";
+import Search from "./pages/search/Search.jsx";
+import Post from "./pages/post/Post.jsx";
 
 import Navbar from "./components/Navbar.jsx";
 import Footer from "./components/Footer.jsx";
@@ -39,11 +46,25 @@ function App() {
           <div className="container">
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/login" element={!user ? <Login /> : <Navigate to="/"/>} />
-              <Route path="/register" element={!user ? <Register /> : <Navigate to="/"/>} />
+              <Route
+                path="/login"
+                element={!user ? <Login /> : <Navigate to="/" />}
+              />
+              <Route
+                path="/register"
+                element={!user ? <Register /> : <Navigate to="/" />}
+              />
               <Route path="/about" element={<About />} />
-              <Route path="/posts/create" element={user ? <CreatePost /> : <Navigate to="/login"/>} />
-              <Route path="/dashboard" element={user ? <Dashboard /> : <Navigate to="/login"/>} />
+              <Route path="/search" element={<Search />} />
+              <Route path="posts/:id" element={<Post />} />
+              <Route
+                path="/posts/create"
+                element={user ? <CreatePost /> : <Navigate to="/login" />}
+              />
+              <Route
+                path="/dashboard"
+                element={user ? <Dashboard /> : <Navigate to="/login" />}
+              />
             </Routes>
           </div>
           <Footer />
