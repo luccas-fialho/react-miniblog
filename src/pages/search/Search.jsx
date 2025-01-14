@@ -9,7 +9,7 @@ const Search = () => {
   const query = useQuery();
   const search = query.get("q");
 
-  const {documents: posts} = useFetchDocuments("posts", search);
+  const { documents: posts } = useFetchDocuments("posts", search);
 
   return (
     <div className={styles.search_container}>
@@ -17,13 +17,15 @@ const Search = () => {
       {posts && posts.length == 0 && (
         <>
           <p>Results not found for: {search}</p>
-          <Link to="/" className="btn btn-dark">Back</Link>
+          <Link to="/" className="btn btn-dark">
+            Back
+          </Link>
         </>
       )}
-      {posts && posts.map(post => (
-        <PostDetail key={post.id} post={post}/>
-      ))}
-      <Link to="/" className="btn btn-dark">Back</Link>
+      {posts && posts.map((post) => <PostDetail key={post.id} post={post} />)}
+      <Link to="/" className="btn btn-dark">
+        Back
+      </Link>
     </div>
   );
 };

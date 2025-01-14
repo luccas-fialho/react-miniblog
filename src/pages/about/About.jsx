@@ -8,8 +8,13 @@ const About = () => {
       <h2>
         About the mini <span>Blog</span>
       </h2>
-      <p>This project consists in a blog made with React on the frontend and Firebase on the backend</p>
-      <Link to="/posts/create" className="btn">Create Post</Link>
+      <p>
+        This project consists in a blog made with React on the frontend and
+        Firebase on the backend
+      </p>
+      <Link to="/posts/create" className="btn">
+        Create Post
+      </Link>
     </div>
   );
 };

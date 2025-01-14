@@ -6,7 +6,7 @@ import PostDetail from "../../components/PostDetail";
 
 const Home = () => {
   const [query, setQuery] = useState("");
-  const {documents:posts, loading} = useFetchDocuments("posts");
+  const { documents: posts, loading } = useFetchDocuments("posts");
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
@@ -29,11 +29,13 @@ const Home = () => {
       </form>
       <div>
         {loading && <p>Loading posts...</p>}
-        {posts && posts.map((post) => <PostDetail key={post.id} post={post}/>)}
+        {posts && posts.map((post) => <PostDetail key={post.id} post={post} />)}
         {posts && posts.length == 0 && (
           <div className={styles.noposts}>
             <p>No posts yet...</p>
-            <Link className="btn" to={"/posts/create"}>Create your first post!</Link>
+            <Link className="btn" to={"/posts/create"}>
+              Create your first post!
+            </Link>
           </div>
         )}
       </div>

@@ -3,7 +3,6 @@ import styles from "./Login.module.css";
 import { useAuthentication } from "../../hooks/useAuthentication";
 
 const Login = () => {
-
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
