@@ -72,18 +72,19 @@ export const useAuthentication = () => {
     try {
       await signInWithEmailAndPassword(auth, data.email, data.password);
       setLoading(false);
+      return true;
     } catch (error) {
-
       let errorMessage;
 
       if (error.message.includes("invalid-credential")) {
-        errorMessage = "Incorrect email or password!"
+        errorMessage = "Incorrect email or password!";
       } else {
-        errorMessage = "An error has occurred, try again later."
+        errorMessage = "An error has occurred, try again later.";
       }
 
       setLoading(false);
       setError(errorMessage);
+      return false;
     }
   };
 
