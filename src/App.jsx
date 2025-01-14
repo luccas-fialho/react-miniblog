@@ -20,6 +20,7 @@ import CreatePost from "./pages/createPost/CreatePost.jsx";
 import Dashboard from "./pages/dashboard/Dashboard.jsx";
 import Search from "./pages/search/Search.jsx";
 import Post from "./pages/post/Post.jsx";
+import EditPost from "./pages/editPost/EditPost.jsx";
 
 import Navbar from "./components/Navbar.jsx";
 import Footer from "./components/Footer.jsx";
@@ -57,6 +58,10 @@ function App() {
               <Route path="/about" element={<About />} />
               <Route path="/search" element={<Search />} />
               <Route path="posts/:id" element={<Post />} />
+              <Route
+                path="posts/edit/:id"
+                element={user ? <EditPost /> : <Navigate to="/login" />}
+              />
               <Route
                 path="/posts/create"
                 element={user ? <CreatePost /> : <Navigate to="/login" />}
