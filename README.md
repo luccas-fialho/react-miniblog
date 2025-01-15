@@ -1,8 +1,19 @@
-# React + Vite
+# React + Firebase
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## My Miniblog
 
-Currently, two official plugins are available:
+Project done within the React course from Udemy for educational purposes.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+A blog where you can create an account, login, post, manage your posts, logout and view your and other persons posts
+
+It was used Firebase for backend because it was easy to use, providing a BaaS ready to go.
+
+## Project install
+
+1. Copy the project repo
+2. Install dependencies `npm i`
+3. Configure the .env file with the firebase data
+
+## Conclusion
+
+In this project, I had a greater understanding in hooks mainly, as well as components lifecycles and React design patterns.
